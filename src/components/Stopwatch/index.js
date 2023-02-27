@@ -17,11 +17,16 @@ class StopWatch extends Component {
     clearInterval(this.timeInterval)
     this.setState({
       timeElapsedInSeconds: 0,
+      isTimerStarted: false,
     })
   }
 
   onClickStop = () => {
     clearInterval(this.timeInterval)
+
+    this.setState({
+      isTimerStarted: false,
+    })
   }
 
   updateTimer = () => {
@@ -60,7 +65,7 @@ class StopWatch extends Component {
     return (
       <div className="app-container">
         <div className="stop-watch-container">
-          <h1 className="heading">Stop Watch </h1>
+          <h1 className="heading">Stopwatch </h1>
           <div className="timer-logo-container">
             <div className="logo-container">
               <img
